@@ -1,4 +1,5 @@
 # ExEnum
+[![Build Status](https://travis-ci.org/efcasado/exenum.svg?branch=master)](https://travis-ci.org/efcasado/exenum)[![Coverage Status](https://coveralls.io/repos/github/efcasado/exenum/badge.svg?branch=master)](https://coveralls.io/github/efcasado/exenum?branch=master)
 
 **ExEnum** is a simple [enumeration](https://en.wikipedia.org/wiki/Enumeration)
 library for Elixir.
