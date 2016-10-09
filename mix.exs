@@ -7,6 +7,12 @@ defmodule Exenum.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     preferred_cli_env: ["coveralls": :test,
+                         "coveralls.detail": :test,
+                         "coveralls.post": :test,
+                         "coveralls.html": :test
+                        ],
+     test_coverage: [tool: ExCoveralls],
      deps: deps]
   end
 
@@ -27,6 +33,10 @@ defmodule Exenum.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      # Test dependencies
+      {:credo, "~> 0.4", only: [:dev, :test]},
+      {:excoveralls, "~> 0.5", only: :test}
+    ]
   end
 end

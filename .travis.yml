@@ -1,0 +1,11 @@
+language: elixir
+elixir:
+  - 1.3.2
+otp_release:
+  - 19.0
+env:
+  global:
+    - secure: "UGhIdYiGVLr+pA6CH0YaZ10EE3FUFHYI7NWXgKI7/wdpAibvNvZ5oMG774jelWVmkoTgBELOWI9oSJz+yfWO5LrqNnzRsDkdonVcKjcUW83jkcPSJcxP4tUtHk25/8Yqp/J/v8rERz60nTZ0rcsyamip1n1V8j96hllGDpP8v+Evnl8lz4zhdAqlmoVHKWbE8OK1TL+ameqXfIiKs1aw6RNgaVFO0tHSVNkdbLQV60h0EDVrr6NiAajgZJbcda0WDrmN2mS+t8npO9Y8btffzjl5y4atnEOFxu3RYNdCPZt/PpUigAZVYzmAsXhrNpBncoJZ6vr9e+UMP9YCM16pgs889FY92b50F5ebi6ONTdx5f7QqxoaoOtWoluNekijQpajSAwjIh3xpJsqQ8UfQfkeeklUXMcGtr5p55SKJMcF1liYkpKy4lXB40EPcljwEGbYCc5kB7m28uh0h9dCVbypFfur6jmjv9BD+i35lkPs+vo5wXH8vDqFkdzmlKm9TCfjjEiPbT6ppqBpB4ZXa/f+HBqxNaG5xwX2kLMmiCJEqbYPZF7766BTRgbTjs2OTQ8Y3yPKyDGuuIxuLB2+cdHv0UobTwL4+wdEbU/7KoUxIo6RWxOe99XA5+Vs0ewC+BUYB6FyUc1OXpuJujK6ZjeYIUN9FV0cpUQMn7sH/zpc="
+    - MIX_ENV=test
+
+script: mix coveralls.travis
