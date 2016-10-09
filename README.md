@@ -1,5 +1,5 @@
 # ExEnum
-[![Build Status](https://travis-ci.org/efcasado/exenum.svg?branch=master)](https://travis-ci.org/efcasado/exenum)[![Coverage Status](https://coveralls.io/repos/github/efcasado/exenum/badge.svg?branch=master)](https://coveralls.io/github/efcasado/exenum?branch=master)[[!Hex PM]](http://img.shields.io/hexpm/v/exenum.svg?style=flat)](https://hex.pm/packages/exenum)
+[![Build Status](https://travis-ci.org/efcasado/exenum.svg?branch=master)](https://travis-ci.org/efcasado/exenum)[![Coverage Status](https://coveralls.io/repos/github/efcasado/exenum/badge.svg?branch=master)](https://coveralls.io/github/efcasado/exenum?branch=master)[![Hex PM](http://img.shields.io/hexpm/v/exenum.svg?style=flat)](https://hex.pm/packages/exenum)
 
 **ExEnum** is a simple [enumeration](https://en.wikipedia.org/wiki/Enumeration)
 library for Elixir.
