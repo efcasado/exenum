@@ -1,5 +1,79 @@
 defmodule ExEnum do
+  ##== Preamble ===========================================================
+  @moduledoc """
+  A simple enumeration library for Elixir.
 
+  Just add **use ExEnum, from: [ ... ]** to your module and it will
+  automagically acquire the following functionality:
+
+  - Ability to list all the values in the enumeration
+  - Ability to check if an arbitrary value belongs to the enumeration
+  - Ability to access a value from the enumeration via a dedicated accessor
+  function
+  - Ability to list all the keys that can be used to access each of the
+  enumeration values
+
+  This functionality is realised by means of the following functions:
+  **values/0**, **is_valid?/1**, **keys/0** and **\<key>/0**. Note that
+  your module will have as many **\<key>/0** functions as enumeration
+  values are in the `use ExEnum, from: [ ... ]` clause.
+
+  ## Example(s)
+
+  ```elixir
+  defmodule Planet do
+    use ExEnum, from: [
+      "MERCURY",
+      "VENUS",
+      "EARTH",
+      "MARS",
+      "JUPITER",
+      "SATURN",
+      "URANUS",
+      "NEPTUNE"
+    ]
+  end
+
+  Planet._MERCURY
+  # => "MERCURY"
+
+  Planet.values
+  # => ["MERCURY", "VENUS", "EARTH", "MARS", "JUPITER",
+  #     "SATURN", "URANUS", "NEPTUNE"]
+
+  Planet.keys
+  # => [:_MERCURY, :_VENUS, :_EARTH, :_MARS, :_JUPITER,
+  #     :SATURN, :_URANUS, :_NEPTUNE]
+
+  Planet.is_valid?("PLUTO")
+  # => false
+  ```
+
+  ```elixir
+  defmodule Direction do
+    use ExEnum, from: [
+      {:north, 1},
+      {:east, 2},
+      {:south, 3},
+      {:west, 4}
+    ]
+  end
+
+  Direction.north
+  # => 1
+
+  Direction.values
+  # => [1, 2, 3, 4]
+
+  Direction.keys
+  # => [:north, :east, :south, :west]
+
+  Planets.is_valid?(:north_east)
+  # => false
+  ```
+  """
+
+  
   ##== API ================================================================
 
   # Callback invoked by `use`.
