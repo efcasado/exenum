@@ -1,4 +1,13 @@
+###=========================================================================
+### File: ExEnum.ex
+###
+### A simple enumeration library for Elixir.
+###
+### Author(s):
+###   - Enrique Fernandez <efcasado(at)gmail.com>
+###=========================================================================
 defmodule ExEnum do
+
   ##== Preamble ===========================================================
   @moduledoc """
   A simple enumeration library for Elixir.
