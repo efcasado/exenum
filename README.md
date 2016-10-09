@@ -23,8 +23,8 @@ function
 enumeration values
 
 This functionality is realised by means of the following functions: **values/0**,
-**is_valid?/1**, **keys/0** and **<key>/0**. Note that your module will have as many
-**<key>/0** functions as enumeration values in the `use ExEnum, from: [ ... ]`
+**is_valid?/1**, **keys/0** and **\<key>/0**. Note that your module will have as many
+**\<key>/0** functions as enumeration values in the `use ExEnum, from: [ ... ]`
 clause.
 
 
@@ -49,11 +49,11 @@ Planet._MERCURY
 
 Planet.values
 # => ["MERCURY", "VENUS", "EARTH", "MARS", "JUPITER",
-      "SATURN", "URANUS", "NEPTUNE"]
+#     "SATURN", "URANUS", "NEPTUNE"]
 
 Planet.keys
 # => [:_MERCURY, :_VENUS, :_EARTH, :_MARS, :_JUPITER,
-      :SATURN, :_URANUS, :_NEPTUNE]
+#     :SATURN, :_URANUS, :_NEPTUNE]
 
 Planet.is_valid?("PLUTO")
 # => false
