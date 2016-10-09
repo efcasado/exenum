@@ -39,4 +39,20 @@ defmodule Exenum.Mixfile do
       {:excoveralls, "~> 0.5", only: :test}
     ]
   end
+
+  ##== Hex ================================================================
+  defp description do
+    """
+    A simple enumeration library for Elixir.
+    """
+  end
+
+  defp package do
+    [
+     name: :exenum,
+     files: ["config", "mix.exs", "lib", "test", "README*", "LICENSE*"],
+     maintainers: ["Enrique Fernandez"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/efcasado/exenum"}]
+  end
 end
