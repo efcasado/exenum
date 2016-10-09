@@ -1,4 +1,12 @@
-defmodule ExenumTest do
+###========================================================================
+### File: ExEnumTest.ex
+###
+### Unit tests
+###
+### Author(s):
+###   - Enrique Fernandez <efcasado(at)gmail.com>
+###========================================================================
+defmodule ExEnumTest do
   ##== Preamble ===========================================================
   use ExUnit.Case
 
@@ -33,7 +41,7 @@ defmodule ExenumTest do
   test "Get value via implicit key" do
     assert Planet._EARTH == "EARTH"
   end
-
+  
   test "Get value via exlicit key" do
     assert Direction.north == 1
   end
@@ -42,7 +50,7 @@ defmodule ExenumTest do
     assert Planet.values == ["MERCURY", "VENUS", "EARTH", "MARS", "JUPITER",
 			     "SATURN", "URANUS", "NEPTUNE"]
   end
-
+  
   test "Get all implicit keys" do
     assert Planet.keys == [:_MERCURY, :_VENUS, :_EARTH, :_MARS, :_JUPITER,
 			   :_SATURN, :_URANUS, :_NEPTUNE]
