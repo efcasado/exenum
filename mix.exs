@@ -3,6 +3,7 @@ defmodule Exenum.Mixfile do
 
   def project do
     [app: :exenum,
+     description: "A simple enumeration library for Elixir",
      version: "0.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
@@ -13,7 +14,8 @@ defmodule Exenum.Mixfile do
                          "coveralls.html": :test
                         ],
      test_coverage: [tool: ExCoveralls],
-     deps: deps]
+     deps: deps,
+     package: package]
   end
 
   # Configuration for the OTP application
@@ -41,12 +43,6 @@ defmodule Exenum.Mixfile do
   end
 
   ##== Hex ================================================================
-  defp description do
-    """
-    A simple enumeration library for Elixir.
-    """
-  end
-
   defp package do
     [
      name: :exenum,
