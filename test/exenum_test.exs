@@ -67,4 +67,17 @@ defmodule ExEnumTest do
   test "Invalid enumeration value" do
     assert Planet.is_valid?("PLUTO") == false
   end
+
+  test "Enum from value" do
+    assert Planet.from_value("EARTH") == "EARTH"
+  end
+
+  test "Enum from homomorphic value" do
+    assert Direction.from_value(1) == :north
+  end
+
+  test "Invalid enum from value" do
+    assert Direction.from_value(-1) == nil
+  end
+
 end
