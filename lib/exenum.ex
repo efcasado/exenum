@@ -94,7 +94,7 @@ defmodule ExEnum do
       fn({k, v}) -> {k, v}
         (v) ->
           k = to_fname(v)
-        {k, v}
+          {k, v}
       end)
 
     ks = Keyword.keys(kvs)
@@ -102,12 +102,25 @@ defmodule ExEnum do
 
     ks_f = quote do: def keys(), do: unquote(ks)
     vs_f = quote do: def values(), do: unquote(vs)
+
     iv_f =
       Enum.reduce(
         vs,
         [quote do: def is_valid?(_), do: false],
         fn(v, acc) ->
           f = quote do: def is_valid?(unquote(v)), do: true
+          [f| acc]
+        end)
+
+    fv_f =
+      Enum.reduce(
+        data,
+        [quote do: def from_value(_), do: nil],
+        fn({k, v}, acc) ->
+          f = quote do: def from_value(unquote(v)), do: unquote(k)
+          [f| acc]
+          (v, acc) ->
+            f = quote do: def from_value(unquote(v)), do: unquote(v)
           [f| acc]
         end)
 
@@ -119,7 +132,7 @@ defmodule ExEnum do
             quote do: def unquote(k)(), do: unquote(v)
         end)
     
-    List.flatten([ks_f, vs_f, iv_f, fs])
+    List.flatten([ks_f, vs_f, iv_f, fv_f, fs])
   end
 
   
