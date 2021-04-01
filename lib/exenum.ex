@@ -56,6 +56,12 @@ defmodule ExEnum do
 
   Planet.is_valid?("PLUTO")
   # => false
+
+  Planet.from_value("EARTH")
+  # => "EARTH"
+
+  Planet.from_value("PLUTO")
+  # => nil
   ```
 
   ```elixir
@@ -79,6 +85,12 @@ defmodule ExEnum do
 
   Planets.is_valid?(:north_east)
   # => false
+
+  Planets.from_value(:north)
+  # => 1
+
+  Planets.from_value(:north_east)
+  # => nil
   ```
   """
 

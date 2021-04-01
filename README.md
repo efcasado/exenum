@@ -24,7 +24,7 @@ function
 enumeration values
 
 This functionality is realised by means of the following functions: **values/0**,
-**is_valid?/1**, **keys/0** and **\<key>/0**. Note that your module will have as many
+**is_valid?/1**, **from_value/1**, **keys/0** and **\<key>/0**. Note that your module will have as many
 **\<key>/0** functions as enumeration values in the `use ExEnum, from: [ ... ]`
 clause.
 
@@ -58,6 +58,12 @@ Planet.keys
 
 Planet.is_valid?("PLUTO")
 # => false
+
+Planet.from_value("EARTH")
+# => "EARTH"
+
+Planet.is_valid?("PLUTO")
+# => nil
 ```
 
 ```elixir
@@ -79,8 +85,14 @@ Direction.values
 Direction.keys
 # => [:north, :east, :south, :west]
 
-Planets.is_valid?(:north_east)
+Direction.is_valid?(:north_east)
 # => false
+
+Direction.from_value(:north_east)
+# => nil
+
+Direction.from_value(:north)
+# => 1
 ```
 
 
