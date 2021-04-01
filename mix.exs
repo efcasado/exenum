@@ -38,7 +38,7 @@ defmodule Exenum.Mixfile do
     [
       # Test dependencies
       {:credo, "~> 0.4", only: [:dev, :test]},
-      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:ex_doc, "~> 0.19", only: :dev},
       {:excoveralls, "~> 0.5", only: :test}
     ]
   end
